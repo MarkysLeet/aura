@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Memoria — Where care and memory live side by side</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="theme-light" data-page="home">
+  <div class="page-wrap">
+    <header class="site-header reveal" id="top">
+      <a class="logo-group" href="index.html" aria-label="Aura Memoria home">
+        <div class="logo-text">
+          <span class="logo-title">Aura Memoria</span>
+          <span class="logo-subtitle" data-i18n="header.tagline">Care • Memory • Nature</span>
+        </div>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="memorial.html" data-i18n="nav.memory">Memory</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="header-controls">
+        <div class="language-menu" data-language-menu>
+          <button
+            class="language-menu__toggle"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Select language"
+            data-i18n-aria-label="header.languageToggle"
+          >
+            <span class="language-menu__globe" aria-hidden="true"></span>
+            <span class="language-menu__current" data-language-label>EN</span>
+            <span class="language-menu__chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="language-menu__list" role="menu" hidden>
+            <li>
+              <button
+                type="button"
+                role="menuitemradio"
+                aria-checked="false"
+                class="language-menu__option"
+                data-lang="en"
+                data-label="EN"
+              >
+                English
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                role="menuitemradio"
+                aria-checked="false"
+                class="language-menu__option"
+                data-lang="ru"
+                data-label="RU"
+              >
+                Русский
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                role="menuitemradio"
+                aria-checked="false"
+                class="language-menu__option"
+                data-lang="tr"
+                data-label="TR"
+              >
+                Türkçe
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                role="menuitemradio"
+                aria-checked="false"
+                class="language-menu__option"
+                data-lang="de"
+                data-label="DE"
+              >
+                Deutsch
+              </button>
+            </li>
+          </ul>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" type="button">
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+        </button>
+        <a
+          class="btn btn--header"
+          href="login.html"
+          data-i18n="header.login"
+          data-auth-visible="signed-out"
+        >
+          Sign in
+        </a>
+        <a
+          class="btn btn--header btn--outline"
+          href="dashboard.html"
+          data-i18n="header.dashboard"
+          data-auth-visible="signed-in"
+          data-role-visible="user"
+          hidden
+        >
+          Personal cabinet
+        </a>
+        <a
+          class="btn btn--header btn--outline"
+          href="admin.html"
+          data-i18n="header.adminPanel"
+          data-auth-visible="signed-in"
+          data-role-visible="admin"
+          hidden
+        >
+          Admin panel
+        </a>
+        <button
+          class="header-link header-link--muted"
+          type="button"
+          data-action="logout"
+          data-i18n="header.logout"
+          data-auth-visible="signed-in"
+          hidden
+        >
+          Sign out
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reveal" aria-labelledby="hero-title">
+        <div class="hero__background" aria-hidden="true"></div>
+        <div class="hero__content">
+          <h1 id="hero-title" data-i18n="hero.title">Where care and memory live side by side.</h1>
+          <p data-i18n="hero.subtitle">Aura Memoria unites veterinary care, love, and everlasting remembrance in harmony with nature and light.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact" data-i18n="hero.primaryCta">Book an Appointment</a>
+            <a class="btn btn--ghost" href="#services" data-i18n="hero.secondaryCta">Explore Services</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__circle hero__circle--one"></div>
+          <div class="hero__circle hero__circle--two"></div>
+          <div class="hero__silhouette"></div>
+        </div>
+      </section>
+
+      <section class="services reveal" id="services" aria-labelledby="services-title">
+        <header class="section-header">
+          <span class="section-kicker" data-i18n="services.kicker">Our Essence</span>
+          <h2 id="services-title" data-i18n="services.title">A sanctuary for every chapter of life</h2>
+        </header>
+        <div class="services__grid">
+          <a class="service-card" id="clinic" href="clinic.html">
+            <div class="service-card__icon" aria-hidden="true">🩺</div>
+            <h3 data-i18n="services.clinic.title">Veterinary Center</h3>
+            <p data-i18n="services.clinic.copy">Comprehensive care guided by compassion, modern diagnostics, and a calm environment for every visit.</p>
+            <span class="service-card__link" data-i18n="services.clinic.link">Discover more</span>
+          </a>
+          <a class="service-card" href="memorial.html">
+            <div class="service-card__icon" aria-hidden="true">🌿</div>
+            <h3 data-i18n="services.memorial.title">Memorial Park</h3>
+            <p data-i18n="services.memorial.copy">Personalized remembrance ceremonies, cremation services, and timeless tributes embraced by serene gardens.</p>
+            <span class="service-card__link" data-i18n="services.memorial.link">Visit the park</span>
+          </a>
+          <article class="service-card" id="park">
+            <div class="service-card__icon" aria-hidden="true">☕</div>
+            <h3 data-i18n="services.park.title">Recreation Grove</h3>
+            <p data-i18n="services.park.copy">Quiet walks, gentle tea terraces, and shared moments beneath emerald canopies with the pets you love.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="memory highlight reveal" id="memory" aria-labelledby="memory-title">
+        <div class="highlight__content">
+          <h2 id="memory-title" data-i18n="memory.quote">“In the whisper of leaves we hear their everlasting love.”</h2>
+          <p data-i18n="memory.copy">Our memorial keepers craft tributes that honor the joy, loyalty, and light our companions bring into our lives.</p>
+          <a class="btn btn--outline" href="#stories" data-i18n="memory.cta">Learn more</a>
+        </div>
+      </section>
+
+      <section class="stories reveal" id="stories" aria-labelledby="stories-title">
+        <header class="section-header">
+          <span class="section-kicker" data-i18n="stories.kicker">Stories of Memory</span>
+          <h2 id="stories-title" data-i18n="stories.title">Echoes of love continuing to bloom</h2>
+        </header>
+        <div class="stories__list">
+          <article class="story-card">
+            <h3 data-i18n="stories.card1.title">Sunlit Path for Luna</h3>
+            <p data-i18n="stories.card1.copy">How a gentle garden ceremony helped a family celebrate their husky’s adventurous spirit.</p>
+            <button class="link-more" type="button" data-i18n="stories.card.button">Coming soon</button>
+          </article>
+          <article class="story-card">
+            <h3 data-i18n="stories.card2.title">The Cedar Bench</h3>
+            <p data-i18n="stories.card2.copy">A community-built tribute spot where visitors leave handwritten notes for companions passed.</p>
+            <button class="link-more" type="button" data-i18n="stories.card.button">Coming soon</button>
+          </article>
+          <article class="story-card">
+            <h3 data-i18n="stories.card3.title">Tea at Dusk</h3>
+            <p data-i18n="stories.card3.copy">Weekly gatherings blending mindfulness, art therapy, and quiet moments with friends.</p>
+            <button class="link-more" type="button" data-i18n="stories.card.button">Coming soon</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact reveal" id="contact" aria-labelledby="contact-title">
+        <header class="section-header">
+          <span class="section-kicker" data-i18n="contact.kicker">Connect</span>
+          <h2 id="contact-title" data-i18n="contact.title">We are here to listen and to help</h2>
+        </header>
+        <div class="contact__layout">
+          <div class="contact__details">
+            <div class="detail">
+              <h3 data-i18n="contact.visit.title">Visit</h3>
+              <p data-i18n="contact.visit.address">Golden Grove Lane 12, Serene District</p>
+              <p data-i18n="contact.visit.hours">Open daily 8:00 – 22:00</p>
+            </div>
+            <div class="detail">
+              <h3 data-i18n="contact.call.title">Call</h3>
+              <p><a href="tel:+74951234567" data-i18n="contact.call.primary">+7 (495) 123-45-67</a></p>
+              <p><a href="tel:+905551234567" data-i18n="contact.call.secondary">+90 555 123 45 67</a></p>
+            </div>
+            <div class="detail">
+              <h3 data-i18n="contact.write.title">Write</h3>
+              <p><a href="mailto:hello@auramemoria.com" data-i18n="contact.write.email">hello@auramemoria.com</a></p>
+            </div>
+          </div>
+          <form class="contact__form" data-form="contact" novalidate>
+            <div class="form-group">
+              <label for="name" data-i18n="contact.form.name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+                data-i18n-placeholder="contact.form.namePlaceholder"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="contact.form.email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+                data-i18n-placeholder="contact.form.emailPlaceholder"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message" data-i18n="contact.form.message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="How can we support you?"
+                required
+                data-i18n-placeholder="contact.form.messagePlaceholder"
+              ></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit" data-i18n="contact.form.submit">Send message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer reveal">
+      <div class="site-footer__inner">
+        <div class="footer-brand">
+          <span class="logo-title">Aura Memoria</span>
+          <span class="logo-subtitle" data-i18n="header.tagline">Care • Memory • Nature</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="memorial.html" data-i18n="nav.memory">Memory</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+        </nav>
+        <div class="footer-meta">
+          <p data-i18n="footer.copy">© 2025 Aura Memoria. All rights reserved.</p>
+          <a class="footer-link" href="#top" data-i18n="footer.backToTop">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/scripts.js" defer></script>
+</body>
+</html>

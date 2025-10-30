@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Memoria — Admin panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="theme-light" data-page="admin">
+  <div class="page-wrap">
+    <header class="site-header reveal" id="top">
+      <a class="logo-group" href="index.html" aria-label="Aura Memoria home">
+        <div class="logo-text">
+          <span class="logo-title">Aura Memoria</span>
+          <span class="logo-subtitle" data-i18n="header.tagline">Care • Memory • Nature</span>
+        </div>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html#services" data-i18n="nav.services">Services</a>
+        <a href="memorial.html" data-i18n="nav.memory">Memory</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="header-controls">
+        <div class="language-menu" data-language-menu>
+          <button
+            class="language-menu__toggle"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Select language"
+            data-i18n-aria-label="header.languageToggle"
+          >
+            <span class="language-menu__globe" aria-hidden="true"></span>
+            <span class="language-menu__current" data-language-label>EN</span>
+            <span class="language-menu__chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="language-menu__list" role="menu" hidden>
+            <li>
+              <button type="button" role="menuitemradio" aria-checked="false" class="language-menu__option" data-lang="en" data-label="EN">
+                English
+              </button>
+            </li>
+            <li>
+              <button type="button" role="menuitemradio" aria-checked="false" class="language-menu__option" data-lang="ru" data-label="RU">
+                Русский
+              </button>
+            </li>
+            <li>
+              <button type="button" role="menuitemradio" aria-checked="false" class="language-menu__option" data-lang="tr" data-label="TR">
+                Türkçe
+              </button>
+            </li>
+            <li>
+              <button type="button" role="menuitemradio" aria-checked="false" class="language-menu__option" data-lang="de" data-label="DE">
+                Deutsch
+              </button>
+            </li>
+          </ul>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" type="button">
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+        </button>
+        <a
+          class="btn btn--header"
+          href="login.html"
+          data-i18n="header.login"
+          data-auth-visible="signed-out"
+        >
+          Sign in
+        </a>
+        <a
+          class="btn btn--header btn--outline"
+          href="dashboard.html"
+          data-i18n="header.dashboard"
+          data-auth-visible="signed-in"
+          data-role-visible="user"
+          hidden
+        >
+          Personal cabinet
+        </a>
+        <a
+          class="btn btn--header btn--outline"
+          href="admin.html"
+          data-i18n="header.adminPanel"
+          data-auth-visible="signed-in"
+          data-role-visible="admin"
+          hidden
+        >
+          Admin panel
+        </a>
+        <button
+          class="header-link header-link--muted"
+          type="button"
+          data-action="logout"
+          data-i18n="header.logout"
+          data-auth-visible="signed-in"
+          hidden
+        >
+          Sign out
+        </button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-hero reveal" aria-labelledby="admin-title">
+        <div>
+          <span class="section-kicker" data-i18n="admin.kicker">Administrator</span>
+          <h1 id="admin-title" data-i18n="admin.title">Management panel</h1>
+          <p data-i18n="admin.subtitle">
+            Review every guest appointment, confirm serene visits, and keep the schedule flowing gently.
+          </p>
+        </div>
+      </section>
+
+      <section class="admin-controls reveal" aria-label="Appointment controls">
+        <div class="admin-control">
+          <label for="admin-filter-status" data-i18n="admin.filter.status">Filter by status</label>
+          <select id="admin-filter-status" data-admin-filter-status>
+            <option value="all" data-i18n="admin.filter.statusAll">All statuses</option>
+            <option value="pending" data-i18n="admin.filter.statusPending">Awaiting confirmation</option>
+            <option value="confirmed" data-i18n="admin.filter.statusConfirmed">Confirmed</option>
+            <option value="cancelled" data-i18n="admin.filter.statusCancelled">Cancelled</option>
+          </select>
+        </div>
+        <div class="admin-control">
+          <label for="admin-filter-user" data-i18n="admin.filter.user">Filter by guest</label>
+          <select id="admin-filter-user" data-admin-filter-user>
+            <option value="all" data-i18n="admin.filter.userAll">All guests</option>
+          </select>
+        </div>
+        <div class="admin-control">
+          <label for="admin-filter-date" data-i18n="admin.filter.date">Filter by date</label>
+          <input id="admin-filter-date" type="date" data-admin-filter-date />
+        </div>
+        <div class="admin-control">
+          <label for="admin-sort" data-i18n="admin.sort.label">Sort by</label>
+          <select id="admin-sort" data-admin-sort>
+            <option value="dateAsc" data-i18n="admin.sort.dateAsc">Date — oldest first</option>
+            <option value="dateDesc" data-i18n="admin.sort.dateDesc">Date — newest first</option>
+            <option value="status" data-i18n="admin.sort.status">Status</option>
+            <option value="guest" data-i18n="admin.sort.guest">Guest name</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="admin-table-section reveal" aria-labelledby="admin-table-title">
+        <div class="admin-table__header">
+          <h2 id="admin-table-title" data-i18n="admin.table.title">Guest appointments</h2>
+          <p data-i18n="admin.table.subtitle">Confirm, reschedule, or cancel with a gentle touch.</p>
+        </div>
+        <div class="admin-table__wrapper">
+          <table class="admin-table" data-admin-table>
+            <thead>
+              <tr>
+                <th data-i18n="admin.table.guest">Guest</th>
+                <th data-i18n="admin.table.service">Service</th>
+                <th data-i18n="admin.table.datetime">Date & time</th>
+                <th data-i18n="admin.table.status">Status</th>
+                <th data-i18n="admin.table.actions">Actions</th>
+              </tr>
+            </thead>
+            <tbody data-admin-table-body>
+              <tr data-admin-empty>
+                <td colspan="5" data-i18n="admin.table.empty">No appointments yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer reveal">
+      <div class="site-footer__inner">
+        <div class="footer-brand">
+          <span class="logo-title">Aura Memoria</span>
+          <span class="logo-subtitle" data-i18n="header.tagline">Care • Memory • Nature</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html#services" data-i18n="nav.services">Services</a>
+          <a href="memorial.html" data-i18n="nav.memory">Memory</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+        </nav>
+        <div class="footer-meta">
+          <p data-i18n="footer.copy">© 2025 Aura Memoria. All rights reserved.</p>
+          <a class="footer-link" href="#top" data-i18n="footer.backToTop">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="assets/scripts.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Memoria — About us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="theme-light" data-page="about">
+  <div class="page-wrap">
+    <header class="site-header reveal" id="top">
+      <a class="logo-group" href="index.html" aria-label="Aura Memoria home">
+        <div class="logo-text">
+          <span class="logo-title">Aura Memoria</span>
+          <span class="logo-subtitle" data-i18n="header.tagline">Care • Memory • Nature</span>
+        </div>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html#services" data-i18n="nav.services">Services</a>
+        <a href="memorial.html" data-i18n="nav.memory">Memory</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="header-controls">
+        <div class="language-menu" data-language-menu>
+          <button
+            class="language-menu__toggle"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Select language"
+            data-i18n-aria-label="header.languageToggle"
+          >
+            <span class="language-menu__globe" aria-hidden="true"></span>
+            <span class="language-menu__current" data-language-label>EN</span>
+            <span class="language-menu__chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="language-menu__list" role="menu" hidden>
+            <li>
+              <button
+                type="button"
+                role="menuitemradio"
+                aria-checked="false"
+                class="language-menu__option"
+                data-lang="en"
+                data-label="EN"
+              >
+                English
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                role="menuitemradio"
+                aria-checked="false"
+                class="language-menu__option"
+                data-lang="ru"
+                data-label="RU"
+              >
+                Русский
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                role="menuitemradio"
+                aria-checked="false"
+                class="language-menu__option"
+                data-lang="tr"
+                data-label="TR"
+              >
+                Türkçe
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                role="menuitemradio"
+                aria-checked="false"
+                class="language-menu__option"
+                data-lang="de"
+                data-label="DE"
+              >
+                Deutsch
+              </button>
+            </li>
+          </ul>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" type="button">
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+        </button>
+        <a
+          class="btn btn--header"
+          href="login.html"
+          data-i18n="header.login"
+          data-auth-visible="signed-out"
+        >
+          Sign in
+        </a>
+        <a
+          class="btn btn--header btn--outline"
+          href="dashboard.html"
+          data-i18n="header.dashboard"
+          data-auth-visible="signed-in"
+          data-role-visible="user"
+          hidden
+        >
+          Personal cabinet
+        </a>
+        <a
+          class="btn btn--header btn--outline"
+          href="admin.html"
+          data-i18n="header.adminPanel"
+          data-auth-visible="signed-in"
+          data-role-visible="admin"
+          hidden
+        >
+          Admin panel
+        </a>
+        <button
+          class="header-link header-link--muted"
+          type="button"
+          data-action="logout"
+          data-i18n="header.logout"
+          data-auth-visible="signed-in"
+          hidden
+        >
+          Sign out
+        </button>
+      </div>
+    </header>
+
+    <main class="about-main">
+      <section class="about-hero reveal" aria-labelledby="about-title">
+        <div class="about-hero__text">
+          <span class="section-kicker" data-i18n="about.kicker">About Aura Memoria</span>
+          <h1 id="about-title" data-i18n="about.title">A sanctuary shaped by light, care, and memory</h1>
+          <p data-i18n="about.body1">
+            Aura Memoria was created as a single home where veterinary expertise, remembrance rituals, and tranquil green spaces
+            meet without boundaries.
+          </p>
+          <p data-i18n="about.body2">
+            Every material, scent, and sound is chosen to soften transitions for families and companions, guiding them from
+            attentive treatment to tender celebration.
+          </p>
+          <blockquote class="about-hero__quote" data-i18n="about.quote">
+            “We create a space where light, care, and memory unite as one.”
+          </blockquote>
+        </div>
+        <figure class="about-hero__image" data-parallax data-parallax-speed="0.2">
+          <img
+            src="https://i.imgur.com/S1QPHlL.png"
+            alt="Aura Memoria reception hall with sculpted desk and golden logo"
+            data-i18n-alt="about.imageAlt"
+            loading="lazy"
+          />
+          <figcaption class="about-hero__caption" data-i18n="about.imageCaption">
+            Reception lounge welcoming guests to Aura Memoria
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="about-details reveal" aria-labelledby="about-details-title">
+        <header class="section-header">
+          <span class="section-kicker" data-i18n="about.details.kicker">Our atmosphere</span>
+          <h2 id="about-details-title" data-i18n="about.details.title">What greets you when you arrive</h2>
+        </header>
+        <div class="about-details__grid">
+          <article class="about-details__card">
+            <h3 data-i18n="about.details.item1.title">Serene welcome</h3>
+            <p data-i18n="about.details.item1.copy">
+              Concierge hosts offer herbal infusions, warm lighting, and gentle music to settle every heartbeat.
+            </p>
+          </article>
+          <article class="about-details__card">
+            <h3 data-i18n="about.details.item2.title">Connected guidance</h3>
+            <p data-i18n="about.details.item2.copy">
+              Veterinary caretakers and memorial keepers coordinate each step so no moment feels rushed or alone.
+            </p>
+          </article>
+          <article class="about-details__card">
+            <h3 data-i18n="about.details.item3.title">Living memories</h3>
+            <p data-i18n="about.details.item3.copy">
+              Indoor gardens, story alcoves, and digital archives invite families to return, remember, and continue traditions.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer reveal">
+      <div class="site-footer__inner">
+        <div class="footer-brand">
+          <span class="logo-title">Aura Memoria</span>
+          <span class="logo-subtitle" data-i18n="header.tagline">Care • Memory • Nature</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html#services" data-i18n="nav.services">Services</a>
+          <a href="memorial.html" data-i18n="nav.memory">Memory</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+        </nav>
+        <div class="footer-meta">
+          <p data-i18n="footer.copy">© 2025 Aura Memoria. All rights reserved.</p>
+          <a class="footer-link" href="#top" data-i18n="footer.backToTop">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="assets/scripts.js" defer></script>
+</body>
+</html>
