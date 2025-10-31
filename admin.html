@@ -26,6 +26,19 @@
         <a href="memorial.html" data-i18n="nav.memory">Memory</a>
         <a href="about.html" data-i18n="nav.about">About</a>
       </nav>
+      <button
+        class="header-menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Open menu"
+        data-i18n-aria-label="header.menuOpen"
+        data-mobile-menu-toggle
+        aria-controls="mobile-menu"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
       <div class="header-controls">
         <div class="language-menu" data-language-menu>
           <button
@@ -160,6 +173,9 @@
             <thead>
               <tr>
                 <th data-i18n="admin.table.guest">Guest</th>
+                <th data-i18n="admin.table.guardian">Guardian</th>
+                <th data-i18n="admin.table.contact">Contact</th>
+                <th data-i18n="admin.table.notes">Notes</th>
                 <th data-i18n="admin.table.service">Service</th>
                 <th data-i18n="admin.table.datetime">Date & time</th>
                 <th data-i18n="admin.table.status">Status</th>
@@ -168,7 +184,7 @@
             </thead>
             <tbody data-admin-table-body>
               <tr data-admin-empty>
-                <td colspan="5" data-i18n="admin.table.empty">No appointments yet.</td>
+                <td colspan="8" data-i18n="admin.table.empty">No appointments yet.</td>
               </tr>
             </tbody>
           </table>
@@ -189,10 +205,111 @@
         </nav>
         <div class="footer-meta">
           <p data-i18n="footer.copy">© 2025 Aura Memoria. All rights reserved.</p>
-          <a class="footer-link" href="#top" data-i18n="footer.backToTop">Back to top</a>
+          <a class="footer-link" href="#top" data-scroll-top data-i18n="footer.backToTop">Back to top</a>
         </div>
       </div>
     </footer>
+    <div class="admin-reschedule" data-admin-reschedule hidden>
+      <div class="admin-reschedule__backdrop" data-admin-reschedule-backdrop></div>
+      <div class="admin-reschedule__dialog" role="dialog" aria-modal="true" aria-labelledby="admin-reschedule-title">
+        <button
+          type="button"
+          class="admin-reschedule__close"
+          aria-label="Close reschedule dialog"
+          data-i18n-aria-label="admin.reschedule.cancel"
+          data-admin-reschedule-close
+        ></button>
+        <h2 id="admin-reschedule-title" data-i18n="admin.reschedule.title">Adjust appointment</h2>
+        <p class="admin-reschedule__intro" data-i18n="admin.reschedule.subtitle">
+          Update the time and confirm when the guest is ready.
+        </p>
+        <form class="admin-reschedule__form" data-admin-reschedule-form>
+          <div class="form-row">
+            <label class="form-group">
+              <span data-i18n="admin.reschedule.date">New date</span>
+              <input type="date" name="date" required />
+            </label>
+            <label class="form-group">
+              <span data-i18n="admin.reschedule.time">New time</span>
+              <input type="time" name="time" required />
+            </label>
+          </div>
+          <div class="admin-reschedule__actions">
+            <button type="submit" class="btn btn--primary" data-i18n="admin.reschedule.submit">Save changes</button>
+            <button type="button" class="btn btn--ghost" data-admin-reschedule-close data-i18n="admin.reschedule.cancel">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu-layer" data-mobile-menu-root>
+    <div class="mobile-menu__overlay" data-mobile-menu-overlay data-mobile-menu-close hidden></div>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden aria-hidden="true">
+      <div class="mobile-menu__panel">
+        <button
+          class="mobile-menu__close"
+          type="button"
+          aria-label="Close menu"
+          data-i18n-aria-label="header.menuClose"
+          data-mobile-menu-close
+          data-mobile-menu-initial
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+          <a href="index.html#services" data-i18n="nav.services" data-mobile-menu-link>Services</a>
+          <a href="memorial.html" data-i18n="nav.memory" data-mobile-menu-link>Memory</a>
+          <a href="about.html" data-i18n="nav.about" data-mobile-menu-link>About</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a
+            class="btn btn--header"
+            href="login.html"
+            data-i18n="header.login"
+            data-auth-visible="signed-out"
+            data-mobile-menu-link
+          >
+            Sign in
+          </a>
+          <a
+            class="btn btn--header btn--outline"
+            href="dashboard.html"
+            data-i18n="header.dashboard"
+            data-auth-visible="signed-in"
+            data-role-visible="user"
+            data-mobile-menu-link
+            hidden
+          >
+            Personal cabinet
+          </a>
+          <a
+            class="btn btn--header btn--outline"
+            href="admin.html"
+            data-i18n="header.adminPanel"
+            data-auth-visible="signed-in"
+            data-role-visible="admin"
+            data-mobile-menu-link
+            hidden
+          >
+            Admin panel
+          </a>
+          <button
+            class="header-link header-link--muted mobile-menu__logout"
+            type="button"
+            data-action="logout"
+            data-i18n="header.logout"
+            data-auth-visible="signed-in"
+            data-mobile-menu-link
+            hidden
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="assets/scripts.js" defer></script>
 </body>
