@@ -318,17 +318,11 @@ body.theme-dark .auth-card__subtitle {
   flex-shrink: 0;
 }
 
-.header-menu-toggle span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--color-dark);
-  transition: transform var(--transition-base), opacity var(--transition-base), background var(--transition-base);
-}
-
-.header-menu-toggle span + span {
-  margin-top: 0;
+.header-menu-toggle svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-dark);
+  transition: color var(--transition-base);
 }
 
 body.theme-dark .header-menu-toggle {
@@ -337,8 +331,8 @@ body.theme-dark .header-menu-toggle {
   box-shadow: inset 0 1px 0 rgba(224, 225, 221, 0.25);
 }
 
-body.theme-dark .header-menu-toggle span {
-  background: var(--color-light);
+body.theme-dark .header-menu-toggle svg {
+  color: var(--color-light);
 }
 
 .header-menu-toggle:focus-visible,
@@ -427,25 +421,15 @@ body.theme-dark .mobile-menu__panel {
   transition: background var(--transition-base), border-color var(--transition-base);
 }
 
-.mobile-menu__close span {
-  position: absolute;
-  width: 18px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--color-dark);
-  transition: background var(--transition-base);
+.mobile-menu__close svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-dark);
+  transition: color var(--transition-base);
 }
 
-.mobile-menu__close span:first-child {
-  transform: rotate(45deg);
-}
-
-.mobile-menu__close span:last-child {
-  transform: rotate(-45deg);
-}
-
-body.theme-dark .mobile-menu__close span {
-  background: var(--color-light);
+body.theme-dark .mobile-menu__close svg {
+  color: var(--color-light);
 }
 
 .mobile-menu__close:focus-visible,
@@ -640,10 +624,15 @@ body.theme-dark .header-link--muted:active {
   text-transform: uppercase;
 }
 
-.language-menu__chevron::before {
-  content: '▾';
-  display: inline-block;
-  transform: translateY(-1px);
+.language-menu__chevron {
+  display: inline-flex;
+  align-items: center;
+  transition: transform var(--transition-base);
+}
+
+.language-menu__chevron svg {
+  width: 16px;
+  height: 16px;
 }
 
 body.theme-dark .language-menu__toggle {
@@ -674,11 +663,6 @@ body.theme-dark .language-menu__globe::after {
 body.theme-dark .language-menu__toggle:hover,
 body.theme-dark .language-menu__toggle:focus-visible {
   color: var(--color-light);
-}
-
-.language-menu__chevron {
-  font-size: 0.6rem;
-  transition: transform var(--transition-base);
 }
 
 .language-menu.is-open .language-menu__chevron {
@@ -792,6 +776,14 @@ body.theme-dark .theme-toggle {
   position: absolute;
   opacity: 0;
   transition: opacity 0.4s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle__icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .theme-toggle__icon--sun {
@@ -989,8 +981,18 @@ body.theme-dark .service-card {
 }
 
 .service-card__icon {
-  font-size: 1.8rem;
   margin-bottom: 18px;
+  display: inline-flex;
+}
+
+.service-card__icon svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-deep);
+}
+
+body.theme-dark .service-card__icon svg {
+  color: var(--color-light);
 }
 
 .service-card h3 {
@@ -1860,12 +1862,13 @@ body.theme-dark .btn--inline:focus-visible {
 }
 
 .doctor__list li::before {
-  content: '✶';
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  color: var(--color-gold);
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  flex-shrink: 0;
 }
 
 .clinic-extras {
@@ -1988,12 +1991,13 @@ body.theme-dark .memorial-hero__info {
 }
 
 .memorial-rituals__list li::before {
-  content: '✥';
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  color: var(--color-gold);
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  flex-shrink: 0;
 }
 
 .back-link {
@@ -3209,4 +3213,3 @@ body.theme-dark .admin-actions__item--danger:focus-visible {
   background: rgba(238, 137, 137, 0.2);
   color: rgba(255, 180, 180, 0.95);
 }
-
